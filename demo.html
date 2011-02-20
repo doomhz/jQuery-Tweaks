@@ -7,11 +7,43 @@
 	<script type="text/javascript" src="jquery.doomTweaks.js"></script>
   </head>
   <body id="pageBody">
-	  <h1>jQuery Doom Tweaks Plugin</h1>
+	  <h1>jQuery Doom Tweaks Plugin (check Firebug console to see the results)</h1>
 
 	  <p>Tweak your jQuery framework with handy additional functions.</p>
 
-	  <h2>$.lt()</h2>
+	  <h2>$.l() - alias for console.log() functions - check for Firebug existance</h2>
+
+	  <h3>Examples</h3>
+
+	  <pre>
+$(document).ready(function () {
+	$.l($('div'));
+});
+	  </pre>
+
+	  <h2>$.t() - display UNIX time in seconds (like PHP timestamp() functions does)</h2>
+
+	  <h3>Examples</h3>
+
+	  <pre>
+$(document).ready(function () {
+	$.time();
+});
+	  </pre>
+
+	  <h2>$.lt() - log the code run time to the Firebug console</h2>
+	  
+	  <h3>Examples</h3>
+
+	  <pre>
+$(document).ready(function () {
+	$.lt();
+	$('div');
+	$.lt();
+});
+	  </pre>
+
+	  <h2>$.bm() - benchmark your code</h2>
 	  
 	  <h3>Examples</h3>
 
@@ -36,6 +68,14 @@ $(document).ready(function () {
 
 	<script type="text/javascript">
 		$(document).ready(function () {
+			$.l($('div'));
+
+			$.l($.time());
+
+			$.lt();
+			$('div');
+			$.lt();
+
 			$.bm("var divs = $('.testdiv', '#pageBody');");
 			$.bm("var divs = $('#pageBody').find('.testdiv');");
 			$.bm("var divs = $('#pageBody .testdiv');");

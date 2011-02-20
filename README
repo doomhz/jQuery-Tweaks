@@ -1,3 +1,37 @@
-jQuery Doom Tweaks Plugin
+jQuery Doom Tweaks Plugin (check Firebug console to see the results)
 
 Tweak your jQuery framework with handy additional functions.
+$.l() - alias for console.log() functions - check for Firebug existance
+Examples
+
+$(document).ready(function () {
+	$.l($('div'));
+});
+
+
+$.t() - display UNIX time in seconds (like PHP timestamp() functions does)
+Examples
+
+$(document).ready(function () {
+	$.time();
+});
+
+
+$.lt() - log the code run time to the Firebug console
+Examples
+
+$(document).ready(function () {
+	$.lt();
+	$('div');
+	$.lt();
+});
+
+
+$.bm() - benchmark your code
+Examples
+
+$(document).ready(function () {
+	$.bm("var divs = $('.testdiv', '#pageBody');"); // 2353 on Firebug 3.6
+	$.bm("var divs = $('#pageBody').find('.testdiv');"); // 2324 on Firebug 3.6
+	$.bm("var divs = $('#pageBody .testdiv');"); // 2469 on Firebug 3.6
+});
