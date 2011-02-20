@@ -7,7 +7,8 @@
 *
 * @example: $.l(4,5,6);
 * @example: $.time();
-* @example: $.lt();for (var i = 0;i < 100000;i++) {$('.div');}$lt();
+* @example: $.lt();$('div')$.lt();
+* @example: $.bm('$('div')'); - benchmark your code
 *
 * Dual licensed under the MIT and GPL licenses:
 *   http://www.opensource.org/licenses/mit-license.php
@@ -40,6 +41,10 @@
 					   }
 				});
 
+	/**
+	 * Shortcut function for logging time to the Firebug console
+	 * call $.lt() then your code then $.lt() again to get the results
+	 */
 	$.extend($, {lt: function () {
 						if (this.ltLastTime == null) {
 							return this.ltLastTime = new Date().getTime();
@@ -50,6 +55,23 @@
 						return diff;
 					},
 				 ltLastTime: null
+	});
+
+	/**
+	 * Shortcut function for benchmarking a block of code to the Firebug console
+	 * this function will run your code in a for block to create overflow and push the results into Firebug
+	 *
+	 * @param string benchmarkCode - the block of code you want to benchmark
+	 * @param numeric testTime - the number of FOR cicles
+	 */
+	$.extend($, {bm: function (benchmarkCode, testTime) {
+						this.testTime = typeof testTime === 'number' ? testTime : 9999;
+						$.lt();
+						for (var i = 0;i < this.testTime;i++) {
+							eval(benchmarkCode);
+						}
+						$.lt();
+					}
 	});
 	
 })(jQuery);

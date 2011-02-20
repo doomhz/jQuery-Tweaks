@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>jQuery Doom Tweaks Plugin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="jquery.doomTweaks.js"></script>
+  </head>
+  <body id="pageBody">
+	  <h1>jQuery Doom Tweaks Plugin</h1>
+
+	  <p>Tweak your jQuery framework with handy additional functions.</p>
+
+	  <h2>$.lt()</h2>
+	  
+	  <h3>Examples</h3>
+
+	  <pre>
+$(document).ready(function () {
+	$.bm("var divs = $('.testdiv', '#pageBody');"); // 2353 on Firebug 3.6
+	$.bm("var divs = $('#pageBody').find('.testdiv');"); // 2324 on Firebug 3.6
+	$.bm("var divs = $('#pageBody .testdiv');"); // 2469 on Firebug 3.6
+});
+	  </pre>
+
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+	  <div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div><div class="testdiv"></div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.bm("var divs = $('.testdiv', '#pageBody');");
+			$.bm("var divs = $('#pageBody').find('.testdiv');");
+			$.bm("var divs = $('#pageBody .testdiv');");
+		});
+	</script>
+
+  </body>
+</html>
