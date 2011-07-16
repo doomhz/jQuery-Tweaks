@@ -35,3 +35,5 @@ $(document).ready(function () {
 	$.bm("var divs = $('#pageBody').find('.testdiv');"); // 2324 on Firebug 3.6
 	$.bm("var divs = $('#pageBody .testdiv');"); // 2469 on Firebug 3.6
 });
+
+$.mockAjax({mockUrl: '/ajax_mocks'}); - mock your ajax calls
