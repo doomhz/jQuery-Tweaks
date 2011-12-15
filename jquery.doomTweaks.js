@@ -91,7 +91,7 @@
             }, mockOptions);
             $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
                 if (!options.noMock) {
-                    options.url = mockOptions.mockUrl + '?ajax_url=' + options.url;
+                    options.url = mockOptions.mockUrl + '?ajax_url=' + encodeURIComponent(options.url);
                 }
             });
         }
